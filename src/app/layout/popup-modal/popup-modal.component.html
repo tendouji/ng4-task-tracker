@@ -1,0 +1,12 @@
+<a class="popup-link {{ linkClass!='' ? linkClass : '' }}" title="{{ linkTitle }}" href="#" (click)="openPopupModal($event)" [innerHTML]="linkContent"></a>
+
+<div class="popup-container" #popupModal>
+  <div class="popup-modal">
+    <div class="popup-header"><span>{{ linkTitle }}</span></div>
+    <div class="popup-content" [style.max-height]="contentMaxHeight+'px'">
+      <ng-content></ng-content>
+    </div>
+    <!-- <div class="popup-footer">Footer here</div> -->
+    <a href="#close" class="close-popup" (click)="closePopupModal($event)"><i class="material-icons">close</i></a>
+  </div>
+</div>

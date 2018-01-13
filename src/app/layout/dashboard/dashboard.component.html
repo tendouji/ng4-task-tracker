@@ -1,0 +1,100 @@
+<main class="page">
+  <div class="main-header">
+    <div class="title">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="action">
+      <div class="user">
+        <span class="icon"><i class="material-icons">account_box</i></span>
+        <span class="text">
+          <select>
+            <option *ngFor="let user of userDataArr" 
+              [selected]="(user.id == currentUser)"
+              value="{{user.id}}">{{user.name}}</option>
+          </select>
+        </span>
+      </div>
+      <div class="add" *ngIf="userDataArr.length > 0 && categoryDataArr.length > 0">
+        <span class="text">
+          <task-popup-modal linkContent="Add Task" linkClass="button-rounded small" linkTitle="New Task"
+            [popupWidth]="800">
+            <task-add-task-form></task-add-task-form>
+          </task-popup-modal>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-container grid-container">
+    <div class="row">
+      <div class="col col-full">
+        <div class="dashboard-panel monthly-achievement">
+          <div class="dashboard-panel-header">
+            <div class="header-title">
+              <i class="material-icons">timeline</i>
+              <span>
+                <select name="yearSelector" (change)="changeMonthlyAchievement($event)">
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                </select>
+                &nbsp; Monthly Achievement
+              </span>
+            </div>
+          </div>
+          <div class="dashboard-panel-content">
+            <div class="inner-content" *ngIf="monthlyAchievementData">
+              <div class="chart-area">
+                <task-chart [dataInput]="monthlyAchievementData"></task-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-60">
+        <div class="dashboard-panel tasks-of-the-month">
+          <div class="dashboard-panel-header">
+            <div class="header-title">
+              <i class="material-icons">assessment</i>
+              <span>Total tasks for the month</span>
+            </div>
+          </div>
+          <div class="dashboard-panel-content">
+            <div class="inner-content" *ngIf="tasksCategoryOfMonthData">
+              <div class="chart-area">
+                <task-chart [dataInput]="tasksCategoryOfMonthData"></task-chart>
+              </div>
+              <div class="chart-description">
+                <strong>Total task of the month: {{taskDataArr.length}}</strong>
+                <ul>
+                  <li *ngFor="let item of tasksCategoryOfMonthData.data.labels; let i = index">
+                    <span>{{item}}</span>: 
+                    <span>{{tasksCategoryOfMonthData.data.datasets[0].data[i]}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-40">
+        <div class="dashboard-panel user-tasks-progress">
+          <div class="dashboard-panel-header">
+            <div class="header-title">
+              <i class="material-icons">assessment</i>
+              <span>Your task(s)</span>
+            </div>
+          </div>
+          <div class="dashboard-panel-content">
+            <div class="inner-content" *ngIf="userTasksProgressData">
+              <div class="chart-area">
+                <task-chart [dataInput]="userTasksProgressData"></task-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

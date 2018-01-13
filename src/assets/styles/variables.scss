@@ -1,0 +1,64 @@
+/****************************/
+/* Media layout             */
+/****************************/
+$xsmall-screen: 400px;
+$small-screen: 640px;
+$medium-screen: 800px;
+$large-screen: 1000px;
+
+$xsmall-screen-media: 'screen and (max-width: ' + $xsmall-screen + ')';
+$small-screen-media: 'screen and (max-width: ' + $small-screen + ')';
+$medium-screen-media: 'screen and (max-width: ' + $medium-screen + ')';
+$large-screen-media: 'screen and (max-width: ' + $large-screen + ')';
+
+
+/****************************/
+/* Site preset              */
+/****************************/
+$font-size-base: 14px;
+$font-size-xsmall: .8em;
+$font-size-small: .9em;
+$font-size-large: 1.1em;
+
+$padding-small: 5px;
+$padding-standard: 10px;
+$padding-large: 1em;
+
+$color-white: #fff;
+$color-red: #c00;
+$color-green: #0c0;
+$color-orange: #F57C00;
+$color-yellow: #ffcb2b;
+$color-blue: #7C00F5;
+$color-light: #EEEEE7;
+$color-dark: #262f3d;
+$color-first: #4A7B6F;
+$color-second: rgb(163, 213, 228);
+$color-third: #CCDDDD;
+
+$transparent-white: rgba(255,255,255,.2);
+$transparent-dark: rgba(0,0,0,.2);
+$transparent-dark-light: rgba(0,0,0,.03);
+
+$border-color: $color-second;
+$background-color: $color-light;
+$border-line: '1px solid ' + $color-third;
+$border-line-light: '1px solid ' + $transparent-white;
+
+$zindex-header-menu: 1;
+$zindex-dimmer: 2;
+$zindex-popup: 3;
+$zindex-preloader: 4;
+
+$transition-time-standard: 200ms;
+
+
+/****************************/
+/* Element preset           */
+/****************************/
+$header-width: 200px;
+$common-bar-height: 40px;
+$dashboard-panel-height: 300px;
+
+$logo-icon-size: 30px;
+

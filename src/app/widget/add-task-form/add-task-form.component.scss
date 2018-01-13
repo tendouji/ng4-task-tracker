@@ -1,0 +1,114 @@
+@import "../../../assets/styles/_index";
+
+.grid-container {
+  & .row {
+    & .col {
+      &.col-25 {
+        width: calc(25% - 1em);
+        @media #{$large-screen-media} {
+          width: calc(25% - 1em);
+        }
+        @media #{$medium-screen-media} {
+          width: calc(25% - 1em);
+        }
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+      
+      &.col-75 {
+        width: calc(75% - 1em);
+        @media #{$large-screen-media} {
+          width: calc(75% - 1em);
+        }
+        @media #{$medium-screen-media} {
+          width: calc(75% - 1em);
+        }
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+    }
+  }
+}
+
+.custom-form {
+  & .col {
+    margin-bottom: $padding-standard;
+  }
+
+  & .label {
+    padding: $padding-standard 0;
+    display: inline-block;
+    font-weight: 700;
+
+    @media #{$small-screen-media} {
+      padding: $padding-standard 0 0;
+    }
+  }
+
+  input[type='text'],
+  input[type='email'], 
+  textarea {
+    width: 100%;
+    resize: none;
+    padding: $padding-standard;
+    border: #{$border-line};
+    border-radius: $padding-small;
+    box-sizing: border-box;
+  }
+
+  & .error-message {
+    display: none;
+    padding: 2px;
+    font-size: $font-size-small;
+    text-align: right;
+    color: $color-red;
+  }
+
+  & .clicked {
+    & .ng-invalid {
+      &:not(my-date-picker) {
+        border: 1px solid $color-red;
+        box-shadow: 0 0 3px $color-red;
+        
+        & + .error-message {
+          display: block;
+        }
+      }
+/*
+      & .ng-touched {
+        & .ng-invalid {
+          border: 1px solid $color-red;
+          box-shadow: 0 0 3px $color-red;
+          background-color: rgba(255, 242, 172, .5);
+          
+          & + .error-message {
+            display: block;
+          }
+        }
+      }
+*/
+    } 
+
+    & my-date-picker.ng-invalid {
+      & ::ng-deep .mydp {
+        border: 1px solid $color-red;
+        box-shadow: 0 0 3px $color-red;
+      }
+      
+      & + .error-message {
+        display: block;
+      }
+    } 
+  }
+  
+  & my-date-picker {
+    display: inline-block;
+  }
+
+  & .button-area {
+    text-align: right;
+    padding: 0 $padding-large;
+  }
+}

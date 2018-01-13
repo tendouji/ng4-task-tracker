@@ -1,0 +1,71 @@
+@import "../assets/styles/_index";
+
+::ng-deep {
+  & .page {
+    padding:  $padding-large $padding-large $padding-large calc( #{$header-width} + #{$padding-large} );
+    color: $color-dark;
+  
+    @media #{$medium-screen-media} {
+      padding: #{$padding-large * 3} $padding-large $padding-large;
+    }
+  }
+
+  & .main-header {
+    border-bottom: #{$border-line};
+    margin: 0 0 $padding-large;
+    @include clear-bottom;
+
+    & .title {
+      float: left;
+      width: 40%;
+    
+      & h1 {
+        margin: 0 0 $padding-standard;
+        color: $color-first;
+
+        @media #{$small-screen-media} {
+          font-size: 1.6em;
+        }
+      }
+    }
+
+    & .action {
+      float: right;
+      width: 55%;
+      text-align: right;
+
+      & .add, 
+      & .user {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 $padding-large;
+        border-right: #{$border-line};
+
+        &:last-child {
+          padding: 0 0 0 $padding-large;
+          border-right: 0;
+        }
+        
+        & .icon {
+          display: inline-block;
+          vertical-align: middle;
+
+          & .material-icons {
+            font-size: #{$padding-large * 2.7};
+            color: $color-first;
+          }
+        }
+
+        & select {
+          min-width: 100px;
+        }
+      }
+
+      & .user {
+        @media #{$small-screen-media} {
+          display: none;
+        }
+      }
+    }
+  }
+}

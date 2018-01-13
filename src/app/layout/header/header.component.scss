@@ -1,0 +1,35 @@
+@import "../../../assets/styles/_index";
+
+header {
+  & .logo {
+    display: block;
+    padding: $padding-standard;
+    border-bottom: 1px solid $color-blue;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-transform: uppercase;
+
+    & .material-icons {
+      display: inline-block;
+      width: $logo-icon-size;
+      height: $logo-icon-size;
+      margin-right: $padding-small;
+      border-radius: 5px;
+      color: $color-dark;
+      text-align: center;
+      line-height: $logo-icon-size;
+      background-color: $color-orange;
+      transition: background-color $transition-time-standard;
+    }
+
+    & * {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      & .material-icons {
+        background-color: $color-yellow;
+      }
+    }
+  }
+}

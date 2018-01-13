@@ -1,1 +1,177 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/_index';
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-light;
+  font-family: 'Lato', sans-serif;
+  font-size: $font-size-base;  
+  color: $color-dark;
+  
+  &.fixed {
+    position: fixed;
+    overflow: hidden;
+    @include fit-full-screen;
+  }
+}
+
+a {
+  color: $color-dark;
+  text-decoration: none;
+  
+  &.standard-link {
+    color: $color-orange;
+    border-bottom: 1px dotted $color-orange;
+    
+    &:hover {
+      color: $color-white;
+      background-color: $color-orange;
+      border-radius: 2px;
+      border-bottom: 0;
+    }
+  }
+}
+
+input, textarea, select, button {
+  font-family: 'Lato', sans-serif;
+  font-size: $font-size-base;  
+  color: $color-dark;
+}
+
+.button-rounded {
+  display: inline-block;
+  padding: $padding-large (3 * $padding-large);
+  box-sizing: border-box;
+  border: 0;
+  border-radius: $padding-small;
+  background-color: $color-orange;
+  line-height: $font-size-base;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-white;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &.small {
+    padding: $padding-standard $padding-large;
+    
+    @media #{$small-screen-media} {
+      padding: $padding-small $padding-standard;
+      font-size: $font-size-xsmall;
+    }
+  }
+}
+
+.select-rounded {
+  position: relative;
+  width: 100%;
+  border: #{$border-line};
+  border-radius: $padding-small;
+  box-sizing: border-box;
+  color: $color-dark;
+  background: $color-white;
+  overflow:hidden;
+
+  &:after {
+    position: absolute;
+    right: $padding-standard;
+    top: 50%;
+    margin-top: -#{$padding-standard / 2};
+    width: 0; 
+    height: 0; 
+    border-left: $padding-standard solid transparent;
+    border-right: $padding-standard solid transparent;
+    border-top: $padding-standard solid $color-dark;
+    content: '';
+  }
+
+  & select {
+    border: 0;
+    color: $color-dark;
+    background: transparent;
+    padding: $padding-standard;
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.grid-container {
+  margin-right: -1em;
+  
+  & .row {
+    @include clear-bottom;
+    width: 100%;
+        
+    & .col {
+      margin-right: 1em;
+      float: left;
+        
+      &.col-25 {
+        width: calc(25% - 1em);
+        @media #{$large-screen-media} {
+          width: calc(50% - 1em);
+        }
+        @media #{$medium-screen-media} {
+          width: calc(50% - 1em);
+        }
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+      
+      &.col-40 {
+        width: calc(40% - 1em);
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+      
+      &.col-50 {
+        width: calc(50% - 1em);
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+      
+      &.col-60 {
+        width: calc(60% - 1em);
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+        
+      &.col-75 {
+        width: calc(75% - 1em);
+        @media #{$large-screen-media} {
+          width: calc(50% - 1em);
+        }
+        @media #{$medium-screen-media} {
+          width: calc(50% - 1em);
+        }
+        @media #{$small-screen-media} {
+          width: calc(100% - 1em);
+        }
+      }
+
+      &.col-full {
+        width: calc(100% - 1em);
+      }
+
+    }
+  }
+}

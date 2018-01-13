@@ -1,0 +1,34 @@
+@import "../../../assets/styles/_index";
+
+nav {
+  display: block;
+  overflow-y: auto;
+  height: calc(100% - #{$logo-icon-size} - #{$padding-standard * 2});
+}
+
+.menu {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  & li {
+    display: block;
+    border-bottom: #{$border-line-light};
+    
+    & a {
+      display: block;
+      padding:  $padding-small
+                $padding-standard 
+                $padding-small
+                #{$padding-standard * 2};
+    }
+    
+    & .menu-title {
+      display: block;
+      padding: $padding-standard;
+      font-weight: bold;
+      background-color: #{$transparent-white};
+    }
+  }
+}

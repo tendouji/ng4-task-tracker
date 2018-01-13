@@ -1,0 +1,18 @@
+@import "../../../assets/styles/_index";
+
+.dimmer {
+  display: none;
+  position: fixed;
+  @include fit-full-screen;
+  //top: $header-height;
+  //height: calc(100% - #{$header-height});
+  background-color: $transparent-dark;
+  z-index: $zindex-dimmer;
+  opacity: 0;
+  transition: opacity $transition-time-standard;
+
+  &.show {
+    opacity: 1;
+  }
+}
+

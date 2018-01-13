@@ -1,0 +1,73 @@
+<div class="task-container grid-container custom-form">
+  <p>All fields are required.</p>
+  <form [formGroup]="addTaskForm" (ngSubmit)="doLogin($event)" [class.clicked]="this.clickedOnce">
+    <div class="row">
+      <div class="col col-25"><span class="label">Created by</span></div>
+      <div class="col col-25">
+        <input formControlName="taskCreatedBy" type="text" placeholder="Created by" class="rounded" name="taskCreatedBy" id="taskCreatedBy" disabled>
+        <input formControlName="taskCreatedById" type="hidden" name="taskCreatedById" id="taskCreatedById" disabled>
+      </div>
+      <div class="col col-25"><span class="label">Created on</span></div>
+      <div class="col col-25">
+        <input formControlName="taskCreatedOn" type="text" placeholder="Created on" class="rounded" name="taskCreatedOn" id="taskCreatedOn" disabled>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-25">
+        <span class="label">Title</span>
+      </div>
+      <div class="col col-75">
+        <input formControlName="taskName" type="text" placeholder="Title" class="rounded" name="taskName" id="taskName">
+        <span class="error-message">{{ taskNameErrorText }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-25"><span class="label">Assigned to</span></div>
+      <div class="col col-75">
+        <div class="select-rounded">
+          <select formControlName="taskAssignedTo" name="taskAssignedTo" id="taskAssignedTo">
+            <option *ngFor="let user of userDataArr" [selected]="(user.id == currentUser)" value="{{user.id}}">{{user.name}}</option>
+          </select>
+        </div>
+        <span class="error-message">{{ taskAssignedToErrorText }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-25"><span class="label">Category</span></div>
+      <div class="col col-25">
+        <div class="select-rounded">
+          <select formControlName="taskCategory" name="taskCategory" id="taskCategory">
+            <option *ngFor="let cat of categoryDataArr; let i = index" value="{{i}}">{{cat.name}}</option>
+          </select>
+        </div>
+        <span class="error-message">{{ taskCategoryErrorText }}</span>
+      </div>
+      <div class="col col-25"><span class="label">Priority</span></div>
+      <div class="col col-25">
+        <div class="select-rounded">
+          <select formControlName="taskPriority" name="taskPriority" id="taskPriority">
+            <option *ngFor="let i of taskPriorityArr" value="{{i}}">{{i}}</option>
+          </select>
+        </div>
+        <span class="error-message">{{ taskPriorityErrorText }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-25"><span class="label">Description</span></div>
+      <div class="col col-75">
+        <textarea formControlName="taskDescription" name="taskDescription" id="taskDescription" rows="5" placeholder="Description"></textarea>
+        <span class="error-message">{{ taskDescriptionErrorText }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-25"><span class="label">Completed by</span></div>
+      <div class="col col-75">
+        <my-date-picker name="taskCompletedBy" [options]="datePickerOptions" formControlName="taskCompletedBy"></my-date-picker>
+        <span class="error-message">{{ taskCompletedByErrorText }}</span>
+      </div>
+    </div>
+    <div class="button-area">
+      <button class="button-rounded" type="submit">Submit</button>
+    </div>
+  </form>
+</div>

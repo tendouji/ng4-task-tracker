@@ -1,0 +1,53 @@
+@import "../../../assets/styles/_index";
+
+$clicker-height: 40px;
+
+.sidebar {
+  @include fit-full-screen;
+  position: fixed;
+  width: $header-width;
+  color: $color-light;
+  background-color: $color-dark;
+  transition: left $transition-time-standard;
+  z-index: 1;
+
+  @media #{$medium-screen-media} {
+    left: -$header-width;
+  }
+
+  &.show {
+    @media #{$medium-screen-media} {
+      left: 0;
+    }
+  }
+
+  & .clicker {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: $clicker-height;
+    line-height: $clicker-height;
+    text-align: center;
+    color: $color-orange;
+    border-bottom-right-radius: $padding-small;
+    background-color: $color-dark;
+    overflow: hidden;
+    cursor: pointer;
+    transition: width $transition-time-standard;
+
+    @media #{$medium-screen-media} {
+      width: $clicker-height;
+    }
+
+    & .material-icons {
+      vertical-align: middle;      
+    }
+  }
+}
+
+::ng-deep {
+  a {
+    color: $color-light;
+  }
+}
