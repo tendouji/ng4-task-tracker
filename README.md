@@ -1,27 +1,31 @@
-# Ng4TaskTracker
+# Task Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+This is a project written using Angular2/4, with Typescript and SCSS. All the components are mostly written from scratch except the following:
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Charts (ChartJS)
+For graph charts, it would be better to use a proven library, ChartJS, to speed up my development.
 
-## Code scaffolding
+### Data (Firebase)
+I use Firebase as my core database storage, as it will be easier for me to set up and also there has been an active library connecting Angular and Firebase called AngularFire.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Icons (Google Material)
+For visual representations, I use icons, specifically from Google Material. The usage of icons is solely for additional aesthetic values (on top of, otherwise, text-only contents). And the reason to use icons instead of images, is due to icons being a part of fonts can load faster and easier to style.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Coding
+In terms of language, I used the following:
 
-## Running unit tests
+### Development (Angular2 + Typescript)
+With Ng2/4, it eases my work to build a single feature components which can be reuse to contain different contents depending on which behavior the user may trigger.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Style (SCSS)
+I use SCSS for it's reusable variables within CSS. It helps a lot to modularise the CSS into collections of variables which can be changed with ease in future. (Future ideas: Similarly, we can utilise such features to be build a standard site with changeable theme, with just tweaks of variables)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Follow-ups
+I believe there is a lot more that can be done for faster, more efficient development. Like, usage of Bootstrap for responsiveness, Google Materials for cleaner interface design. 
 
-## Further help
+Due to time constraint, I am unable to build together with testing as well, something that I hope to include after this.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+A lot of the codes can be further factorised to make the code slimmer.
